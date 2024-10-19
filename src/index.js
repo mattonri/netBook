@@ -1,4 +1,4 @@
-const { app, BrowserWindow, ipcMain } = require("electron");
+const { app, BrowserWindow, ipcMain, Menu } = require("electron");
 const path = require("node:path");
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
@@ -7,6 +7,11 @@ if (require("electron-squirrel-startup")) {
 }
 
 const createWindow = () => {
+  // Create an empty menu to disable the current one
+  const blankMenu = Menu.buildFromTemplate([]);
+
+  // Set the blank menu as the application menu
+  Menu.setApplicationMenu(blankMenu);
   // Create the browser window.
   const mainWindow = new BrowserWindow({
     width: 2100,
@@ -14,6 +19,7 @@ const createWindow = () => {
     webPreferences: {
       preload: path.join(__dirname, "preload.js"),
     },
+
   });
 
   // and load the index.html of the app.
@@ -21,7 +27,7 @@ const createWindow = () => {
   
 
   // Open the DevTools.
-  mainWindow.webContents.openDevTools();
+  //mainWindow.webContents.openDevTools();
 };
 
 // Navigation logic
