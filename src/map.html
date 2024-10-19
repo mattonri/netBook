@@ -6,6 +6,10 @@
         padding: 0;
         height: 100vh; /* Full height */
     }
+    h1 {
+        padding: 10px; /* Some padding for the header */
+        z-index: 1; /* Ensure header is above the map */
+    }
     .iframe-container {
         width: 100%;
         height: 100%;
@@ -23,8 +27,8 @@
     }
 </style>
 <h1>Internships by Location</h1>
-<div>
-    <div id="map" style="height: 500px;"></div>
+<div id="map" style="height: 590px; width: 100%;"></div>
+<!-- <div> -->
     <!-- <iframe src="https://www.byui.edu/career/" width="100%" height="100vh" frameborder="0"></iframe> -->
-</div>
+<!-- </div> -->
 <script src="map.js"></script>
