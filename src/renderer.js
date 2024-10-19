@@ -15,8 +15,8 @@ document.getElementById("forwardButton").addEventListener("click", goForward);
 
 // Home button
 document
-  .getElementById("homeButton")
-  .addEventListener("click", () => navigateTo("home"));
+  .getElementById("favoriteButton")
+  .addEventListener("click", () => navigateTo("favorites"));
 
 // Search button
 document
