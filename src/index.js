@@ -1,4 +1,4 @@
-const { app, BrowserWindow } = require("electron");
+const { app, BrowserWindow, ipcMain } = require("electron");
 const path = require("node:path");
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
@@ -18,10 +18,28 @@ const createWindow = () => {
 
   // and load the index.html of the app.
   mainWindow.loadFile(path.join(__dirname, "index.html"));
+  
 
   // Open the DevTools.
   mainWindow.webContents.openDevTools();
 };
+
+// Navigation logic
+ipcMain.on('navigate-to', (event, page) => {
+  // Handle navigation logic, perhaps updating the window's contents
+  console.log(`Navigating to: ${page}`);
+});
+
+ipcMain.on('go-back', (event) => {
+  // Handle going back in navigation
+  console.log('Going back');
+});
+
+ipcMain.on('go-forward', (event) => {
+  // Handle going forward in navigation
+  console.log('Going forward');
+});
+
 
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
