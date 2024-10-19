@@ -1,12 +1,5 @@
 import { constructTable } from "./searchTableConstructors.js";
 
-const testData = [
-    { id: 1, name: 'John Doe', age: 30, email: 'john@example.com' },
-    { id: 2, name: 'Jane Smith', age: 25, email: 'jane@example.com' },
-    { id: 3, name: 'Alice Johnson', age: 28, email: 'alice@example.com' },
-    { id: 4, name: 'Bob Brown', age: 35, email: 'bob@example.com' }
-];
-
 // Function to initialize the table and set up the search functionality
 function init() {
     const tableElement = document.getElementById('search_table');
