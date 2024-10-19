@@ -24,8 +24,30 @@ body {
     color: var(--yellow);
 }
 
+.sidenav button {
+    color: var(--near-white); /* Default text color */
+    display: block;
+    width: 100%;
+    background: none; /* Remove default button background */
+    border: none; /* Remove default border */
+    padding: 12px 32px; /* Add padding */
+    font-size: 18px; /* Font size */
+    text-align: left; /* Align text to the left */
+    cursor: pointer; /* Change cursor to pointer */
+    transition: color 0.3s, background-color 0.3s; /* Smooth transition for hover effects */
+}
+
+.sidenav button:hover {
+    color: var(--yellow) !important; /* Change text color on hover */
+    background-color: rgba(18, 82, 112, 0.2); /* Add background color on hover */
+}
+
 .main {
     background-color: var(--near-white);
+    flex: 1; /* Take up remaining space */
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
 }
 
 footer {
@@ -54,7 +76,6 @@ footer {
 .text-custom {
     color: var(--dark-blue) !important; /* Override Bootstrap's text color */
 }
-
 
 .icon{
     max-width: 50px;
@@ -86,7 +107,7 @@ footer {
 
 .button-box {
     position: absolute; /* Position button box absolutely */
-    bottom: 20px; /* Position it towards the bottom */
+    bottom: 80px; /* Position it towards the bottom */
     left: 50%; /* Center it horizontally */
     transform: translateX(-50%); /* Adjust the positioning */
     z-index: 2; /* Ensure button is above the image */
