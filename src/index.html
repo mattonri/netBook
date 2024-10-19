@@ -1,18 +1,125 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8" />
-    <title>NetBook</title>
-    <link rel="stylesheet" href="index.css" />
-  </head>
-  <script type="module" src="./renderer.js" defer></script>
-  <body>
+<!-- 
+  <!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Navigation Example</title>
+      <link rel="stylesheet" href="index.css" />
+    <script type="module" src="renderer.js"></script> 
+</head>
+<body>
     <button id="backButton">Back</button>
     <button id="forwardButton">Forward</button>
-    <button id="favoriteButton">Favorite</button>
+    <button id="homeButton">Home</button>
     <button id="searchButton">Search</button>
+    <button id="favoriteButton">Favorites</button>
+    <button id="careerCenterButton">Career Center</button>
+    
+    <div id="main-content">
+        
+    </div>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NetBook</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="index.css" /> -->
+    <script type="module" src="renderer.js"></script> 
 
-    <h1>💖 Hello World!</h1>
-    <p>Welcome to your Electron application.</p>
-  </body>
+    <style>
+        /* Add custom styles if necessary */
+        .sidenav {
+            position: fixed;
+            height: 100%;
+            width: 250px; /* Adjust width */
+            background-color: #489EB5;
+            padding-top: 20px;
+        }
+        .sidenav a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #333;
+            display: block;
+        }
+        .sidenav a:hover {
+            color: #007bff; /* Bootstrap primary color */
+        }
+        #hero {
+            position: relative;
+            overflow: hidden;
+        }
+        #hero-box {
+            position: relative;
+        }
+        #hero-img {
+            width: 100%;
+            height: auto; /* Responsive image */
+        }
+        .button-box {
+            text-align: center;
+            margin: 20px 0;
+        }
+        footer {
+            background-color: #16697B;
+            padding: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <header class="bg-light">
+        <div class="container d-flex justify-content-between align-items-center py-3">
+            <a href="index.html">
+                <img class="logo" src="images/logo.png" alt="NetBook logo" height="50">
+            </a>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+    </header>
+
+    <div id="mySidenav" class="sidenav">
+      <button id="homeButton">Home</button>
+      <button id="searchButton">Search</button>
+      <button id="favoriteButton">Favorites</button>
+      <button id="careerCenterButton">Career Center</button>
+        <div class="button-box">
+            <button id="backButton" class="btn btn-secondary btn-block">Back</button>
+            <button id="forwardButton" class="btn btn-secondary btn-block">Forward</button>
+        </div>
+    </div>
+
+    <div id="main-content" class="main" style="margin-left: 260px;"> <!-- Adjust margin for sidenav -->
+        
+    </div>
+
+    <footer class="footer text-center">
+        <div class="container">
+            <p>NetBook &copy; 2024 - Hack's Kitchen Inc.</p>
+            <div class="social">
+                <a href="https://facebook.com" target="_blank">
+                    <img src="images/facebook.png" alt="fb icon" class="icon">
+                </a>
+                <a href="https://discord.com" target="_blank">
+                    <img src="images/discord.png" alt="discord icon" class="icon">
+                </a>
+                <a href="https://twitch.com" target="_blank">
+                    <img src="images/twitch.png" alt="twitch icon" class="icon">
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS and dependencies (optional) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
 </html>

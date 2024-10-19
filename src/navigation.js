@@ -1,40 +1,58 @@
+// navigate.js
 let backStack = [];
 let forwardStack = [];
 let currentPage = null;
 
 export function navigateTo(page) {
-  if (currentPage != null) {
-    backStack.push(currentPage); // Push the current page to back stack
-  }
-  currentPage = page; // Set new page as current
-  forwardStack = []; // Clear the forward stack as the user is navigating forward
-  loadPage(currentPage);
-  updateButtonState(); // Update button states after navigation
+    if (currentPage != null) {
+        backStack.push(currentPage);
+    }
+    currentPage = page;
+    forwardStack = [];
+    loadPage(currentPage);
+    updateButtonState();
 }
 
 export function goBack() {
-  if (backStack.length > 0) {
-    forwardStack.push(currentPage); // Push current page to forward stack
-    currentPage = backStack.pop(); // Pop the last page from back stack
-    loadPage(currentPage);
-  }
-  updateButtonState(); // Update button states after going forward
+    if (backStack.length > 0) {
+        forwardStack.push(currentPage);
+        currentPage = backStack.pop();
+        loadPage(currentPage);
+    }
+    updateButtonState();
 }
 
 export function goForward() {
-  if (forwardStack.length > 0) {
-    backStack.push(currentPage); // Push current page to the back stack
-    currentPage = forwardStack.pop();
-    loadPage(currentPage);
-  }
-  updateButtonState(); // Update button states after going forward
+    if (forwardStack.length > 0) {
+        backStack.push(currentPage);
+        currentPage = forwardStack.pop();
+        loadPage(currentPage);
+    }
+    updateButtonState();
 }
 
-export function updateButtonState() {
-  document.getElementById("backButton").disabled = backStack.length === 0;
-  document.getElementById("forwardButton").disabled = forwardStack.length === 0;
+function updateButtonState() {
+    document.getElementById("backButton").disabled = backStack.length === 0;
+    document.getElementById("forwardButton").disabled = forwardStack.length === 0;
 }
 
 function loadPage(page) {
-  console.log(`Navigate to : ${page}`);
+  const mainContent = document.getElementById('main-content'); // Assuming you have a div to hold your content
+
+  if (mainContent) {
+      fetch(`${page}.html`) // Fetch the HTML content
+          .then(response => {
+              if (!response.ok) throw new Error('Network response was not ok');
+              return response.text();
+          })
+          .then(html => {
+              mainContent.innerHTML = html; // Update the content
+              console.log(`Loaded content for: ${page}`);
+          })
+          .catch(error => {
+              console.error('Error loading page:', error);
+          });
+  } else {
+      console.error('Main content area not found in the DOM.');
+  }
 }
