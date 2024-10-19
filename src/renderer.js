@@ -49,7 +49,12 @@ document.addEventListener("DOMContentLoaded", () => {
   if (careerCenterButton) {
       careerCenterButton.addEventListener("click", () => navigateTo("careerCenter"));
   } else {
-      console.error("Search button not found");
+      console.error("Career center button not found");
+  }
+  if (mapButton) {
+      mapButton.addEventListener("click", () => navigateTo("map"));
+  } else {
+      console.error("Map button not found");
   }
 });
 
