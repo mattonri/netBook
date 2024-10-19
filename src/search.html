@@ -25,12 +25,16 @@
         border-bottom-right-radius: 10px;
         border-left: 1px solid #fff; /* Small border between button and dropdown */
     }
+
+    #container {
+        min-height: 70vh;
+    }
     
     </style>
     
 </head>
 <body>
-    <div class="container mt-5">
+    <div class="container mt-5" id="container">
         <!-- Single-input search bar with dropdown -->
         <div class="input-group mb-3">
             <input type="text" id="searchInput" class="form-control" placeholder="Search by Name" aria-label="Search by Name">
@@ -46,7 +50,6 @@
                     <li><a class="dropdown-item" href="#" data-search-type="industry">Industry</a></li>
                 </ul>
             </div>
-            
         </div>
 
         <!-- Closeable search filter tags -->
