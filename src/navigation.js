@@ -30,11 +30,11 @@ export function goForward() {
   updateButtonState(); // Update button states after going forward
 }
 
-function loadPage(page) {
-  console.log(`Navigate to : ${page}`);
-}
-
-function updateButtonState() {
+export function updateButtonState() {
   document.getElementById("backButton").disabled = backStack.length === 0;
   document.getElementById("forwardButton").disabled = forwardStack.length === 0;
+}
+
+function loadPage(page) {
+  console.log(`Navigate to : ${page}`);
 }
