@@ -108,10 +108,10 @@ const db = new sqlite3.Database(dbPath, (err) => {
 
 //DataBase Stuff
 // create a table and insert a row
-db.serialize(() => {
-  db.run("CREATE TABLE Users (name, lastName)");
-  db.run("INSERT INTO Users VALUES (?, ?)", ['foo', 'bar']); 
-});
+// db.serialize(() => {
+//   db.run("CREATE TABLE Users (name, lastName)");
+//   db.run("INSERT INTO Users VALUES (?, ?)", ['foo', 'bar']); 
+// });
 ipcMain.handle('db-query', async (event, sqlQuery) => {
   return new Promise((resolve, reject) => {
       db.all(sqlQuery, (err, rows) => {
