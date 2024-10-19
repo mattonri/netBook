@@ -73,6 +73,17 @@ function loadPage(page) {
                         console.error('Error loading map.js.');
                     };
                     document.body.appendChild(script); // Append the script to the body
+
+                    const script2 = document.createElement('script');
+                    script2.type = 'module'; // Specify that this is a module
+                    script2.src = 'https://unpkg.com/leaflet/dist/leaflet.js'; // Specify the path to your JavaScript file
+                    script2.onload = () => {
+                        console.log('https://unpkg.com/leaflet/dist/leaflet.js loaded and executed.');
+                    };
+                    script2.onerror = () => {
+                        console.error('Error loading https://unpkg.com/leaflet/dist/leaflet.js.');
+                    };
+                    document.body.appendChild(script2); // Append the script to the body
                 }
                 
             })
