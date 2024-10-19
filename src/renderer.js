@@ -14,6 +14,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const forwardButton = document.getElementById("forwardButton");
   const favoriteButton = document.getElementById("favoriteButton");
   const searchButton = document.getElementById("searchButton");
+  const homeButton = document.getElementById("homeButton");
+  const careerCenterButton = document.getElementById("careerCenterButton");
 
   // Check if buttons exist before adding listeners
   if (backButton) {
@@ -29,13 +31,23 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   if (favoriteButton) {
-      favoriteButton.addEventListener("click", () => navigateTo("favorite"));
+      favoriteButton.addEventListener("click", () => navigateTo("favorites"));
   } else {
       console.error("Favorite button not found");
   }
 
   if (searchButton) {
       searchButton.addEventListener("click", () => navigateTo("search"));
+  } else {
+      console.error("Search button not found");
+  }
+  if (homeButton) {
+      homeButton.addEventListener("click", () => navigateTo("home"));
+  } else {
+      console.error("Search button not found");
+  }
+  if (careerCenterButton) {
+      careerCenterButton.addEventListener("click", () => navigateTo("careerCenter"));
   } else {
       console.error("Search button not found");
   }

@@ -56,6 +56,3 @@ function loadPage(page) {
       console.error('Main content area not found in the DOM.');
   }
 }
-
-// You can remove the DOMContentLoaded listener here,
-// as the functions will be called from renderer.js
