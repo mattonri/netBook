@@ -2,11 +2,60 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <title>Hello World!</title>
+    <title>NetBook</title>
     <link rel="stylesheet" href="index.css" />
   </head>
   <body>
-    <h1>💖 Hello World!</h1>
-    <p>Welcome to your Electron application.</p>
+    <header>
+      <a href ="index.html">
+          <img class="logo" src="images/logo.png" alt="NetBook logo">
+      </a>
+      <nav class ="nav"> 
+          <a href="index.html">Home</a>
+          <a href="search.html">Search</a>
+          <a href="favorites.html">Favorites</a>
+          <a href="career_center.html">Career Center</a>
+      </nav>
+  </header>
+  
+  <div id="mySidenav" class="sidenav">
+      <a href="#" id="cs">Computer Sceince</a>
+      <a href="#" id="ds">Data Science</a>
+      <a href="#" id="bus">Business</a>
+      <a href="#" id="math">Mathematics</a>
+      <a href="#" id="acc">Accounting</a>
+      <a href="#" id="psy">Psychology</a>
+      <a href="#" id="chem">Chemistry</a>
+  </div>
+
+  <div class="main">
+    <div id="hero">
+        <div id="hero-box">
+          <img id="hero-img" src="images/hero.jpg" alt="Welcome to NetBook">
+        </div>
+      <section id="hero-msg">
+        <h1>Welcome to NetBook!</h1>
+        <p>Looking for a new way to make connections with employers? We've got you.</p>
+      </section>
+      <div class="button-box">
+        <a class="book" href="contactus.html">Book Now</a>
+      </div>
+    </div>
+  </div>
+  <footer>
+      <p>NetBook &copy; 2024 - Hack's Kitchen Inc.</p>
+      <p><a href ="site-plan.html">Site Plan</a></p>
+      <div class ="social">
+          <a href="https://facebook.com" target="_blank">
+              <img src="images/facebook.png" alt="fb icon" class="icon">
+          </a>
+          <a href="https://discord.com" target="_blank">
+              <img src="images/discord.png" alt="discord icon" class="icon">
+          </a>
+          <a href="https://twitch.com" target="_blank">
+              <img src="images/twitch.png" alt="twitch icon" class="icon">
+          </a>
+      </div>
+  </footer>
   </body>
 </html>
