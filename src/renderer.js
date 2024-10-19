@@ -52,3 +52,20 @@ document.addEventListener("DOMContentLoaded", () => {
       console.error("Search button not found");
   }
 });
+
+//DataBase Nonsense
+
+async function fetchProfiles() {
+    try {
+        const rows = await window.electron.invoke('db-query', "SELECT * FROM supervisors");
+        return rows; // Return the fetched rows
+    } catch (error) {
+        console.error('Error querying database:', error);
+        return []; // Return an empty array or handle the error as needed
+    }
+}
+
+// Example usage of the function
+fetchProfiles().then(profiles => {
+    console.log(profiles); // Log the retrieved users or do something else with them
+});

@@ -4,6 +4,10 @@
 // preload.js
 const { contextBridge, ipcRenderer } = require('electron');
 
+contextBridge.exposeInMainWorld('electron', {
+    invoke: (channel, data) => ipcRenderer.invoke(channel, data),
+});
+
 if (!window.navigation) {
     contextBridge.exposeInMainWorld('navigation', {
         navigateTo: (page) => ipcRenderer.send('navigate-to', page),
