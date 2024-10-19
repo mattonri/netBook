@@ -1,3 +1,26 @@
+<!-- 
+  <!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Navigation Example</title>
+      <link rel="stylesheet" href="index.css" />
+    <script type="module" src="renderer.js"></script> 
+</head>
+<body>
+    <button id="backButton">Back</button>
+    <button id="forwardButton">Forward</button>
+    <button id="homeButton">Home</button>
+    <button id="searchButton">Search</button>
+    <button id="favoriteButton">Favorites</button>
+    <button id="careerCenterButton">Career Center</button>
+    
+    <div id="main-content">
+        
+    </div>
+</body>
+</html> -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,14 +29,16 @@
     <title>NetBook</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="index.css" />
+    <!-- <link rel="stylesheet" href="index.css" /> -->
+    <script type="module" src="renderer.js"></script> 
+
     <style>
         /* Add custom styles if necessary */
         .sidenav {
             position: fixed;
             height: 100%;
             width: 250px; /* Adjust width */
-            background-color: #f8f9fa; /* Light gray background */
+            background-color: #489EB5;
             padding-top: 20px;
         }
         .sidenav a {
@@ -42,7 +67,7 @@
             margin: 20px 0;
         }
         footer {
-            background-color: #f8f9fa; /* Light gray background */
+            background-color: #16697B;
             padding: 20px 0;
         }
     </style>
@@ -54,38 +79,30 @@
                 <img class="logo" src="images/logo.png" alt="NetBook logo" height="50">
             </a>
             <form class="form-inline my-2 my-lg-0">
-              <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
             </form>
         </div>
     </header>
 
     <div id="mySidenav" class="sidenav">
-      <a class="nav-link" href="index.html">Home</a>
-      <a class="nav-link" href="search.html">Search</a>
-      <a class="nav-link" href="favorites.html">Favorites</a>
-      <a class="nav-link" href="career_center.html">Career Center</a>
-    </div>
-
-    <div class="main" style="margin-left: 260px;"> <!-- Adjust margin for sidenav -->
-        <div id="hero">
-            <div id="hero-box">
-                <img id="hero-img" src="images/hero.jpg" alt="Welcome to NetBook">
-            </div>
-            <section id="hero-msg" class="text-center">
-                <h1>Welcome to NetBook!</h1>
-                <p>Looking for a new way to make connections with employers? We've got you.</p>
-            </section>
-            <div class="button-box">
-                <a class="btn btn-primary" href="contactus.html">Book Now</a> <!-- Bootstrap button -->
-            </div>
+      <button id="homeButton">Home</button>
+      <button id="searchButton">Search</button>
+      <button id="favoriteButton">Favorites</button>
+      <button id="careerCenterButton">Career Center</button>
+        <div class="button-box">
+            <button id="backButton" class="btn btn-secondary btn-block">Back</button>
+            <button id="forwardButton" class="btn btn-secondary btn-block">Forward</button>
         </div>
     </div>
 
-    <footer class="bg-light text-center">
+    <div id="main-content" class="main" style="margin-left: 260px;"> <!-- Adjust margin for sidenav -->
+        
+    </div>
+
+    <footer class="footer text-center">
         <div class="container">
             <p>NetBook &copy; 2024 - Hack's Kitchen Inc.</p>
-            <p><a href="site-plan.html">Site Plan</a></p>
             <div class="social">
                 <a href="https://facebook.com" target="_blank">
                     <img src="images/facebook.png" alt="fb icon" class="icon">
