@@ -1,38 +1,61 @@
-        /* Color Palette */
-        :root {
-          --dark-blue: #16697B;
-          --med-blue: #489EB5;
-          --light-blue: #82C0CB;
-          --near-white: #ECE7E3;
-          --yellow: #FFA62B;
-      }
+/* Color Palette */
+:root {
+    --dark-blue: #16697B;
+    --med-blue: #489EB5;
+    --light-blue: #82C0CB;
+    --near-white: #ECE7E3;
+    --yellow: #FFA62B;
+}
 
-      /* Customizing Bootstrap colors */
-      body {
-          background-color: var(--near-white); /* Set body background color */
-      }
+/* Customizing Bootstrap colors */
+body {
+    background-color: var(--light-blue); /* Set body background color to light blue */
+}
 
-      .bg-custom {
-          background-color: var(--med-blue) !important; /* Override Bootstrap's background color */
-      }
+.sidenav {
+    background-color: var(--med-blue); /* Change sidenav to medium blue */
+}
 
-      .text-custom {
-          color: var(--dark-blue) !important; /* Override Bootstrap's text color */
-      }
+.sidenav a {
+    color: var(--near-white); /* Change nav link text color */
+}
 
-      .btn-custom {
-          background-color: var(--yellow) !important; /* Custom button background */
-          border-color: var(--yellow) !important; /* Custom button border */
-      }
+.sidenav a:hover {
+    color: var(--yellow); /* Change hover color for nav links */
+}
 
-      .btn-custom:hover {
-          background-color: var(--light-blue) !important; /* Button hover color */
-      }
+.main {
+    background-color: var(--near-white); /* Set main content area background to near white */
+}
 
-      .nav-link {
-          color: var(--near-white) !important; /* Custom nav link color */
-      }
+footer {
+    background-color: var(--dark-blue); /* Dark blue background */
+    color: var(--near-white); /* Near white text color */
+}
 
-      .nav-link:hover {
-          color: var(--yellow) !important; /* Nav link hover color */
-      }
+.footer a {
+    color: var(--near-white); /* Footer link color */
+}
+
+.footer a:hover {
+    color: var(--yellow); /* Footer link hover color */
+}
+
+/* Custom button styles */
+.btn-custom {
+    background-color: var(--yellow) !important; /* Custom button background */
+    border-color: var(--yellow) !important; /* Custom button border */
+}
+
+.btn-custom:hover {
+    background-color: var(--light-blue) !important; /* Button hover color */
+}
+
+.text-custom {
+    color: var(--dark-blue) !important; /* Override Bootstrap's text color */
+}
+
+/* Additional styles as necessary */
+.icon{
+    max-width: 50px;
+}
