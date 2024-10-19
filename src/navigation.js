@@ -37,22 +37,49 @@ function updateButtonState() {
 }
 
 function loadPage(page) {
-  const mainContent = document.getElementById('main-content'); // Assuming you have a div to hold your content
+    const mainContent = document.getElementById('main-content'); // Assuming you have a div to hold your content
 
-  if (mainContent) {
-      fetch(`${page}.html`) // Fetch the HTML content
-          .then(response => {
-              if (!response.ok) throw new Error('Network response was not ok');
-              return response.text();
-          })
-          .then(html => {
-              mainContent.innerHTML = html; // Update the content
-              console.log(`Loaded content for: ${page}`);
-          })
-          .catch(error => {
-              console.error('Error loading page:', error);
-          });
-  } else {
-      console.error('Main content area not found in the DOM.');
-  }
+    if (mainContent) {
+        fetch(`${page}.html`) // Fetch the HTML content
+            .then(response => {
+                if (!response.ok) throw new Error('Network response was not ok');
+                return response.text();
+            })
+            .then(html => {
+                mainContent.innerHTML = html; // Update the content
+                console.log(`Loaded content for: ${page}`);
+
+                // Check if the page is 'search' and load the corresponding script
+                if (page === 'search') {
+                    const script = document.createElement('script');
+                    script.type = 'module'; // Specify that this is a module
+                    script.src = 'search.js'; // Specify the path to your JavaScript file
+                    script.onload = () => {
+                        console.log('search.js loaded and executed.');
+                    };
+                    script.onerror = () => {
+                        console.error('Error loading search.js.');
+                    };
+                    document.body.appendChild(script); // Append the script to the body
+                }
+                if (page === 'map') {
+                    const script = document.createElement('script');
+                    script.type = 'module'; // Specify that this is a module
+                    script.src = 'map.js'; // Specify the path to your JavaScript file
+                    script.onload = () => {
+                        console.log('map.js loaded and executed.');
+                    };
+                    script.onerror = () => {
+                        console.error('Error loading map.js.');
+                    };
+                    document.body.appendChild(script); // Append the script to the body
+                }
+                
+            })
+            .catch(error => {
+                console.error('Error loading page:', error);
+            });
+    } else {
+        console.error('Main content area not found in the DOM.');
+    }
 }
